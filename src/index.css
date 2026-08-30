@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-plum: #5a3d5c;
+  --color-plum-dark: #462f48;
+  --color-plum-light: #7a5a7c;
+  --color-cream: #f5ece4;
+  --color-cream-dark: #eaddd0;
+  --color-tangerine: #f0a84b;
+  --color-blush: #c9938a;
+  --color-ink: #2b2129;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

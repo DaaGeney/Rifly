@@ -1,0 +1,15 @@
+{
+  "name": "Rifa Oreo y Panda",
+  "short_name": "Rifa",
+  "description": "Control de la rifa solidaria de Oreo y Panda",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5ece4",
+  "theme_color": "#5a3d5c",
+  "lang": "es",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
