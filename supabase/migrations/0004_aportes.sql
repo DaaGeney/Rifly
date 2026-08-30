@@ -22,22 +22,22 @@ alter table public.donations enable row level security;
 drop policy if exists "admin lee aportes" on public.donations;
 create policy "admin lee aportes" on public.donations
   for select to authenticated
-  using ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com');
+  using ((auth.jwt() ->> 'email') = 'danietohe@gmail.com');
 
 drop policy if exists "admin registra aportes" on public.donations;
 create policy "admin registra aportes" on public.donations
   for insert to authenticated
-  with check ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com');
+  with check ((auth.jwt() ->> 'email') = 'danietohe@gmail.com');
 
 drop policy if exists "admin actualiza aportes" on public.donations;
 create policy "admin actualiza aportes" on public.donations
   for update to authenticated
-  using ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com')
-  with check ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com');
+  using ((auth.jwt() ->> 'email') = 'danietohe@gmail.com')
+  with check ((auth.jwt() ->> 'email') = 'danietohe@gmail.com');
 
 drop policy if exists "admin borra aportes" on public.donations;
 create policy "admin borra aportes" on public.donations
   for delete to authenticated
-  using ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com');
+  using ((auth.jwt() ->> 'email') = 'danietohe@gmail.com');
 
 revoke all on public.donations from anon;

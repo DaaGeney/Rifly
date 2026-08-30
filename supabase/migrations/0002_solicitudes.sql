@@ -22,13 +22,13 @@ alter table public.number_requests enable row level security;
 drop policy if exists "admin lee solicitudes" on public.number_requests;
 create policy "admin lee solicitudes" on public.number_requests
   for select to authenticated
-  using ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com');
+  using ((auth.jwt() ->> 'email') = 'danietohe@gmail.com');
 
 drop policy if exists "admin actualiza solicitudes" on public.number_requests;
 create policy "admin actualiza solicitudes" on public.number_requests
   for update to authenticated
-  using ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com')
-  with check ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com');
+  using ((auth.jwt() ->> 'email') = 'danietohe@gmail.com')
+  with check ((auth.jwt() ->> 'email') = 'danietohe@gmail.com');
 
 revoke all on public.number_requests from anon;
 

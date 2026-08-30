@@ -23,13 +23,13 @@ alter table public.raffle_numbers enable row level security;
 drop policy if exists "admin lee todo" on public.raffle_numbers;
 create policy "admin lee todo" on public.raffle_numbers
   for select to authenticated
-  using ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com');
+  using ((auth.jwt() ->> 'email') = 'danietohe@gmail.com');
 
 drop policy if exists "admin actualiza" on public.raffle_numbers;
 create policy "admin actualiza" on public.raffle_numbers
   for update to authenticated
-  using ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com')
-  with check ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com');
+  using ((auth.jwt() ->> 'email') = 'danietohe@gmail.com')
+  with check ((auth.jwt() ->> 'email') = 'danietohe@gmail.com');
 
 -- Historial de cambios (respaldo ante equivocaciones).
 -- Lo llena automáticamente un trigger en cada actualización.
@@ -48,7 +48,7 @@ alter table public.raffle_history enable row level security;
 drop policy if exists "admin lee historial" on public.raffle_history;
 create policy "admin lee historial" on public.raffle_history
   for select to authenticated
-  using ((auth.jwt() ->> 'email') = 'diegoassia@gmail.com');
+  using ((auth.jwt() ->> 'email') = 'danietohe@gmail.com');
 
 create or replace function public.log_raffle_change()
 returns trigger

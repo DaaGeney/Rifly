@@ -9,4 +9,4 @@ export const supabase: SupabaseClient | null =
 
 export const isDemo = supabase === null
 
-export const ADMIN_EMAIL = 'diegoassia@gmail.com'
+export const ADMIN_EMAIL = 'danietohe@gmail.com'

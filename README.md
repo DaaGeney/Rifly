@@ -30,14 +30,16 @@ perfecto para probar. Rutas:
    (Project Settings → Database → Connection string → URI).
 3. Crea las tablas: `npm run migrate` (ver [Migraciones](#migraciones)).
 4. Crea tu usuario admin: **Authentication → Users → Add user**, con el correo
-   `diegoassia@gmail.com` y una contraseña (marca "Auto confirm user").
+   configurado como admin (ver `ADMIN_EMAIL` en `src/lib/supabase.ts` y en
+   las políticas de `supabase/migrations/`) y una contraseña (marca
+   "Auto confirm user").
 5. Desactiva el registro de extraños: **Authentication → Sign In / Up →
    Allow new users to sign up → OFF**.
 6. Reinicia `npm run dev`.
 
-Solo el email `diegoassia@gmail.com` puede administrar (definido en las
-políticas de las migraciones y en `src/lib/supabase.ts`); aunque alguien
-creara otra cuenta, RLS le bloquea lecturas y escrituras.
+Solo ese correo puede administrar (definido en las políticas de las
+migraciones y en `src/lib/supabase.ts`); aunque alguien creara otra
+cuenta, RLS le bloquea lecturas y escrituras.
 
 ## Migraciones
 
