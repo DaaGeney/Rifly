@@ -1,14 +1,6 @@
 import { forwardRef } from 'react'
 import type { GridNumber } from './NumberGrid'
-import {
-  pad2,
-  DRAW_DATE,
-  PRIZE,
-  TICKET_PRICE,
-  CONTACT_LABEL,
-  BREB_LABEL,
-  formatCOP,
-} from '../lib/types'
+import { pad2, DRAW_DATE, PRIZE, TICKET_PRICE, formatCOP } from '../lib/types'
 
 /**
  * Tarjeta con la estética del afiche para exportar como PNG.
@@ -26,11 +18,11 @@ const ExportCard = forwardRef<HTMLDivElement, { numbers: GridNumber[] }>(
       >
         <div className="text-center mb-2">
           <span className="inline-block bg-plum text-cream text-2xl font-bold tracking-[0.3em] rounded-xl px-8 py-2 uppercase">
-            Rifa Solidaria
+            Rifa
           </span>
         </div>
         <h1 className="text-center text-6xl font-black text-ink tracking-tight mb-1">
-          OREO Y PANDA 🐾
+          PRO FONDOS 💰
         </h1>
         <p className="text-center text-plum text-2xl font-semibold mb-6">
           Premio {formatCOP(PRIZE)} · Número {formatCOP(TICKET_PRICE)}
@@ -66,9 +58,7 @@ const ExportCard = forwardRef<HTMLDivElement, { numbers: GridNumber[] }>(
         </div>
 
         <p className="text-center text-plum-dark text-xl font-bold">{DRAW_DATE}</p>
-        <p className="text-center text-ink text-xl font-bold mt-2">📲 {CONTACT_LABEL}</p>
-        <p className="text-center text-plum text-xl font-bold mt-1">💸 {BREB_LABEL}</p>
-        <p className="text-center text-blush text-lg font-semibold mt-1">
+        <p className="text-center text-blush text-lg font-semibold mt-2">
           ¡Gracias por ayudarnos a seguir a su lado! ♥
         </p>
       </div>

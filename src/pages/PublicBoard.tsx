@@ -7,15 +7,7 @@ import ExportCard from '../components/ExportCard'
 import RequestModal from '../components/RequestModal'
 import PullToRefreshIndicator from '../components/PullToRefreshIndicator'
 import { usePullToRefresh } from '../hooks/usePullToRefresh'
-import {
-  DRAW_DATE,
-  PRIZE,
-  TICKET_PRICE,
-  CONTACT_LABEL,
-  BREB_LABEL,
-  formatCOP,
-  pad2,
-} from '../lib/types'
+import { DRAW_DATE, PRIZE, TICKET_PRICE, formatCOP, pad2 } from '../lib/types'
 
 const REFRESH_MS = 30_000
 
@@ -81,10 +73,10 @@ export default function PublicBoard() {
       <PullToRefreshIndicator pulling={pulling} refreshing={refreshing} />
       <div className="text-center mb-5">
         <span className="inline-block bg-plum text-cream text-sm sm:text-base font-bold tracking-[0.25em] rounded-lg px-4 py-1 uppercase mb-2">
-          Rifa Solidaria
+          Rifa
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-ink tracking-tight">
-          OREO Y PANDA 🐾
+          PRO FONDOS 💰
         </h1>
         <p className="text-plum font-semibold mt-1">
           Premio {formatCOP(PRIZE)} · Número {formatCOP(TICKET_PRICE)}
@@ -123,9 +115,7 @@ export default function PublicBoard() {
       </button>
 
       <p className="text-center text-plum-dark font-bold mt-5">{DRAW_DATE}</p>
-      <p className="text-center text-ink font-bold mt-2">📲 {CONTACT_LABEL}</p>
-      <p className="text-center text-plum font-bold mt-1">💸 {BREB_LABEL}</p>
-      <p className="text-center text-blush font-semibold mt-1">
+      <p className="text-center text-blush font-semibold mt-2">
         Escríbeme para apartar tu número · ¡Gracias por tu apoyo! ♥
       </p>
 

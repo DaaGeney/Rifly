@@ -1,4 +1,4 @@
-# Rifa Oreo y Panda 🐾
+# Rifa Pro Fondos 💰
 
 App para llevar el control de la rifa solidaria: quién tiene cada número (00–99),
 quién pagó y quién debe, con tablero público para compartir y exportación de
