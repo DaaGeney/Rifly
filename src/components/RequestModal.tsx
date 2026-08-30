@@ -1,13 +1,6 @@
 import { useState } from 'react'
 import { requestNumber } from '../lib/store'
-import {
-  pad2,
-  formatCOP,
-  TICKET_PRICE,
-  CONTACT_NAME,
-  CONTACT_PHONE,
-  readableError,
-} from '../lib/types'
+import { pad2, formatCOP, TICKET_PRICE, readableError } from '../lib/types'
 
 interface Props {
   numbers: number[]
@@ -64,9 +57,7 @@ export default function RequestModal({ numbers, onClose, onDone }: Props) {
     }
 
     if (notReady) {
-      setError(
-        `Las solicitudes en línea aún no están activas. Escríbele a ${CONTACT_NAME} al WhatsApp ${CONTACT_PHONE} para apartar tus números.`
-      )
+      setError('Las solicitudes en línea aún no están activas. Inténtalo más tarde.')
       setSending(false)
       return
     }
@@ -115,8 +106,8 @@ export default function RequestModal({ numbers, onClose, onDone }: Props) {
               </p>
             )}
             <p className="text-ink mb-5">
-              ¡Gracias por la colaboración! 💜 {CONTACT_NAME} te escribirá por WhatsApp
-              para confirmar.
+              ¡Gracias por la colaboración! 💜 Te escribiremos por WhatsApp para
+              confirmar.
             </p>
             <button
               type="button"
@@ -140,8 +131,8 @@ export default function RequestModal({ numbers, onClose, onDone }: Props) {
               </span>
             </div>
             <p className="text-sm text-plum-light mb-4">
-              {numbers.length === 1 ? 'Queda apartado' : 'Quedan apartados'} mientras{' '}
-              {CONTACT_NAME} te confirma por WhatsApp.
+              {numbers.length === 1 ? 'Queda apartado' : 'Quedan apartados'} mientras te
+              confirmamos por WhatsApp.
             </p>
 
             <form onSubmit={submit}>

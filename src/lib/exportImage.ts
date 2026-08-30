@@ -1,5 +1,4 @@
 import { toPng } from 'html-to-image'
-import { CONTACT_LABEL } from './types'
 
 /**
  * Genera el PNG de la tarjeta y lo comparte con la hoja nativa del sistema
@@ -9,14 +8,14 @@ import { CONTACT_LABEL } from './types'
 export async function shareCardPng(node: HTMLElement): Promise<'shared' | 'downloaded' | 'cancelled'> {
   const dataUrl = await toPng(node, { pixelRatio: 2, cacheBust: true })
   const blob = await (await fetch(dataUrl)).blob()
-  const file = new File([blob], 'rifa-oreo-y-panda.png', { type: 'image/png' })
+  const file = new File([blob], 'rifa-pro-fondos.png', { type: 'image/png' })
 
   if (navigator.canShare?.({ files: [file] })) {
     try {
       await navigator.share({
         files: [file],
-        title: 'Rifa Solidaria Oreo y Panda',
-        text: `¡Apoya la rifa de Oreo y Panda! 🐾 Mira los números disponibles:\n${CONTACT_LABEL}`,
+        title: 'Rifa Pro Fondos',
+        text: '¡Apoya la Rifa Pro Fondos! 💰 Mira los números disponibles:',
       })
       return 'shared'
     } catch (e) {
@@ -26,7 +25,7 @@ export async function shareCardPng(node: HTMLElement): Promise<'shared' | 'downl
   }
 
   const link = document.createElement('a')
-  link.download = 'rifa-oreo-y-panda.png'
+  link.download = 'rifa-pro-fondos.png'
   link.href = dataUrl
   link.click()
   return 'downloaded'

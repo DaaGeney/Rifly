@@ -74,14 +74,12 @@ const listNumbers = (numbers: number[]) => {
   return nums.length === 1 ? nums[0] : `${nums.slice(0, -1).join(', ')} y ${nums.at(-1)}`
 }
 
-/** Confirmación con la llave para cobrar: para números apartados, que aún deben. */
+/** Confirmación para cobrar: para números apartados, que aún deben. */
 export function whatsappLink(phone: string, numbers: number[], name: string) {
   const one = numbers.length === 1
   const text = `Hola ${name}, te confirmo ${one ? 'tu número' : 'tus números'} ${bold(
     listNumbers(numbers)
-  )} en la ${RAFFLE_TITLE}. ¡Gracias por la colaboración! Esta es mi llave Bre-B: ${bold(
-    BREB_KEY
-  )}. Recuerda cancelar antes del sorteo para que ${
+  )} en la ${RAFFLE_TITLE}. ¡Gracias por la colaboración! Recuerda cancelar antes del sorteo para que ${
     one ? 'tu número juegue' : 'tus números jueguen'
   }. ¡Mucha suerte!`
   return waLink(phone, text)
@@ -111,13 +109,8 @@ export function thanksLink(phone: string, name: string, amount: number) {
 
 export const TICKET_PRICE = 20000
 export const PRIZE = 1000000
-export const RAFFLE_TITLE = 'Rifa Solidaria Oreo y Panda'
-export const DRAW_DATE = 'Viernes 4 de septiembre · Lotería de Medellín · 11:00 p.m.'
-export const CONTACT_PHONE = '3008827856'
-export const CONTACT_NAME = 'Diego Assia'
-export const CONTACT_LABEL = `Responsable: ${CONTACT_NAME} · ${CONTACT_PHONE}`
-export const BREB_KEY = '@assia951'
-export const BREB_LABEL = `Paga con Bre-B: ${BREB_KEY}`
+export const RAFFLE_TITLE = 'Rifa Pro Fondos'
+export const DRAW_DATE = 'Viernes 25 de septiembre · Lotería de Medellín · 11:00 p.m.'
 
 export const formatCOP = (value: number) =>
   new Intl.NumberFormat('es-CO', {

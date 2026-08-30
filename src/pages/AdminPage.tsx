@@ -335,7 +335,7 @@ export default function AdminPage() {
   return (
     <div className="max-w-2xl lg:max-w-6xl xl:max-w-[88rem] mx-auto px-3 sm:px-4 py-4 sm:py-6">
       <header className="flex items-center justify-between mb-4">
-        <h1 className="text-xl sm:text-2xl font-black text-plum">Rifa Oreo y Panda 🐾</h1>
+        <h1 className="text-xl sm:text-2xl font-black text-plum">Rifa Pro Fondos 💰</h1>
         {!isDemo && (
           <button
             type="button"
@@ -535,7 +535,7 @@ function LoginScreen() {
 
   return (
     <Centered>
-      <h1 className="text-3xl font-black text-plum mb-2">Rifa Oreo y Panda 🐾</h1>
+      <h1 className="text-3xl font-black text-plum mb-2">Rifa Pro Fondos 💰</h1>
       <p className="text-plum-light mb-6">Inicia sesión para administrar la rifa</p>
       <form onSubmit={login} className="w-full max-w-xs text-left">
         <label className="block mb-3">
